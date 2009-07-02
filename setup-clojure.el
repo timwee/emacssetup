@@ -21,22 +21,22 @@
 
 ;$EMACS_LIB/plugins/clojure
 ;; clojure-mode
-(add-to-list 'load-path "~/opt/clojure-mode")
+(add-to-list 'load-path (substitute-in-file-name "$EMACS_LIB/plugins/clojure/clojure-mode"))
 (require 'clojure-mode)
 
 ;; swank-clojure
-(add-to-list 'load-path "~/opt/swank-clojure")
+(add-to-list 'load-path (substitute-in-file-name "$EMACS_LIB/plugins/clojure/swank-clojure"))
 (require 'swank-clojure-autoload)
 (swank-clojure-config
- (setq swank-clojure-jar-path "~/opt/clojure/target/classes")
+ (setq swank-clojure-jar-path (substitute-in-file-name "$EMACS_LIB/plugins/clojure/clojurecode/clojure/target/classes"))
  (setq swank-clojure-extra-classpaths
-       (list "~/opt/clojure-contrib/target/classes" "~/opt/.clojure/")))
+       (list (substitute-in-file-name "$EMACS_LIB/plugins/clojure/clojurecode/clojure-contrib/target/classes") (substitute-in-file-name "$EMACS_LIB/plugins/clojure/clojurecode/.clojure/"))))
 
 ;; slime
 (eval-after-load "slime"
   '(progn (slime-setup '(slime-repl))))
 
-(add-to-list 'load-path "~/opt/slime")
+(add-to-list 'load-path (substitute-in-file-name "$EMACS_LIB/plugins/slime"))
 (require 'slime)
 (slime-setup)
 
