@@ -1,0 +1,1 @@
+(load-file "$EMACS_LIB/boot.el")

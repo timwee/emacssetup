@@ -1,0 +1,34 @@
+; Tim Wee
+;  based off jboner and bradfordcross config
+
+
+###########################################
+## Requirements
+###########################################
+using this setup needs two things.
+
+1.) Environment variable of EMACS_LIB set to this directory. Example:
+export EMACS_LIB=/Users/Admin/opt/emacsplugins
+
+2.) in your .emacs file: (load-file "$EMACS_LIB/boot.el")
+
+
+###########################################
+## Startup Scripts
+###########################################
+
+Put it in the startup folder
+
+
+###########################################
+## plugins
+###########################################
+
+- clojure/slime/swank
+- scala
+- ecb/cedet
+- and more... check out plugins directory,
+ * not all of them will be enabled, check out startup folder for which ones are.
+
+
+happy hacking!
