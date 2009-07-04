@@ -3,9 +3,9 @@
 ;(add-to-list 'load-path (substitute-in-file-name "$EMACS_LIB/plugins/slime"))
 ;(add-to-list 'load-path (substitute-in-file-name "$EMACS_LIB/plugins/clojure/clojure-mode"))
 ;(add-to-list 'load-path (substitute-in-file-name "$EMACS_LIB/plugins/clojure/swank-clojure))
-(load-file (substitute-in-file-name "$EMACS_LIB/plugins/misc/parenface.el"))
+;(load-file (substitute-in-file-name "$EMACS_LIB/plugins/misc/parenface.el"))
 
-(require 'parenface)
+;(require 'parenface)
 
 ;(require 'slime) 
 ;(slime-setup) 

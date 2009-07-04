@@ -67,7 +67,7 @@
 
 (global-set-key [(f12)]         'ido-switch-buffer)
 
-(global-set-key "%"             'match-paren)
+;(global-set-key "%"             'match-paren)
 (global-set-key [(meta enter)]  'save-buffer)
 
 ;;; -----------------------------------------------
