@@ -75,9 +75,7 @@ point."
       (transpose-lines -1))
     (move-to-column col)))
 
-(global-set-key (kbd "M-<down>") 'move-line-down)
-(global-set-key (kbd "M-<up>") 'move-line-up)
-(global-set-key (kbd "M-S-<down>") 'duplicate-line)
+
 
 (defun duplicate-line()
   (interactive)
@@ -105,6 +103,8 @@ point."
 
 (set-cursor-color "white")
 (switch-to-buffer "*scratch*")
-
+(global-set-key (kbd "M-<down>") 'move-line-down)
+(global-set-key (kbd "M-<up>") 'move-line-up)
+(global-set-key (kbd "M-S-<down>") 'duplicate-line)
 
 (message "Emacs is ready")
