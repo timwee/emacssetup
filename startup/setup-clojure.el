@@ -56,8 +56,11 @@
   (setq swank-clojure-binary nil
         swank-clojure-jar-path (expand-file-name "target/dependency/" path)
         swank-clojure-extra-classpaths
-        (mapcar (lambda (d) (expand-file-name d path))
+        	(append (mapcar (lambda (d) (expand-file-name d path))
                 '("src/" "target/classes/" "test/"))
+			(let ((lib (expand-file-name "target/dependency/" path)))
+				                  (if (file-exists-p lib)
+				                      (directory-files lib t ".jar$"))))
         swank-clojure-extra-vm-args
         (list (format "-Dclojure.compile.path=%s"
                       (expand-file-name "target/classes/" path)))
