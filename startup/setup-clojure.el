@@ -63,7 +63,8 @@
 				                      (directory-files lib t ".jar$"))))
         swank-clojure-extra-vm-args
         (list (format "-Dclojure.compile.path=%s"
-                      (expand-file-name "target/classes/" path)))
+                      (expand-file-name "target/classes/" path))
+			  "-Xmx2048m")
         slime-lisp-implementations
         (cons `(clojure ,(swank-clojure-cmd) :init swank-clojure-init)
               (remove-if #'(lambda (x) (eq (car x) 'clojure))
