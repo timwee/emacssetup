@@ -48,6 +48,10 @@
        (if (search-forward "(deftest" nil t)
          (clojure-test-mode)))))
 
+(defun get-jars (path)
+	(if (file-exists-p path)
+		(directory-files path t ".jar$")))
+
 (defun slime-project (path)
   "Setup classpaths for a maven/clojure project & refresh slime"
   (interactive "GPath: ")
@@ -58,9 +62,8 @@
         swank-clojure-extra-classpaths
         	(append (mapcar (lambda (d) (expand-file-name d path))
                 '("src/" "target/classes/" "test/"))
-			(let ((lib (expand-file-name "target/dependency/" path)))
-				                  (if (file-exists-p lib)
-				                      (directory-files lib t ".jar$"))))
+				(get-jars (expand-file-name "target/dependency/" path))
+		    	(get-jars (expand-file-name "lib/" path)))
         swank-clojure-extra-vm-args
         (list (format "-Dclojure.compile.path=%s"
                       (expand-file-name "target/classes/" path))
