@@ -9,6 +9,7 @@ using this setup needs two things.
 
 1.) Environment variable of EMACS_LIB set to this directory. Example:
 export EMACS_LIB=/Users/Admin/opt/emacsplugins
+export ERLANG_HOME=/usr/local/lib/erlang
 
 2.) in your .emacs file: (load-file "$EMACS_LIB/boot.el")
 

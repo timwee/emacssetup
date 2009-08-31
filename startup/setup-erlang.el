@@ -1,0 +1,5 @@
+setq load-path (cons  (substitute-in-file-name "$ERLANG_HOME/lib/tools-<ToolsVer>/emacs")
+      load-path))
+      (setq erlang-root-dir (substitute-in-file-name "$ERLANG_HOME"))
+      (setq exec-path (cons (substitute-in-file-name "$ERLANG_HOME/bin") exec-path))
+      (require 'erlang-start)

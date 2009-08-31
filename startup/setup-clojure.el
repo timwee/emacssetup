@@ -24,13 +24,19 @@
 (add-to-list 'load-path (substitute-in-file-name "$EMACS_LIB/plugins/clojure/clojure-mode"))
 (require 'clojure-mode)
 
+(defun get-jars (path)
+	(if (file-exists-p path)
+		(directory-files path t ".jar$")))
+
 ;; swank-clojure
 (add-to-list 'load-path (substitute-in-file-name "$EMACS_LIB/plugins/clojure/swank-clojure"))
 (require 'swank-clojure-autoload)
 (swank-clojure-config
  (setq swank-clojure-jar-path (substitute-in-file-name "$EMACS_LIB/plugins/clojure/clojurecode/clojure/target/classes"))
  (setq swank-clojure-extra-classpaths
-       (list (substitute-in-file-name "$EMACS_LIB/plugins/clojure/clojurecode/clojure-contrib/target/classes") (substitute-in-file-name "$EMACS_LIB/plugins/clojure/clojurecode/.clojure/"))))
+       (list (substitute-in-file-name "$EMACS_LIB/plugins/clojure/clojurecode/clojure-contrib/target/classes")
+ 			(substitute-in-file-name "$EMACS_LIB/plugins/clojure/clojurecode/incanter")	
+			(substitute-in-file-name "$EMACS_LIB/plugins/clojure/clojurecode/.clojure/"))))
 
 ;; slime
 (eval-after-load "slime"
@@ -48,9 +54,7 @@
        (if (search-forward "(deftest" nil t)
          (clojure-test-mode)))))
 
-(defun get-jars (path)
-	(if (file-exists-p path)
-		(directory-files path t ".jar$")))
+
 
 (defun slime-project (path)
   "Setup classpaths for a maven/clojure project & refresh slime"
