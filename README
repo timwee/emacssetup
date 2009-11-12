@@ -1,5 +1,4 @@
 ; Tim Wee
-;  based off jboner and bradfordcross config
 
 
 ###########################################
@@ -7,11 +6,19 @@
 ###########################################
 using this setup needs two things.
 
-1.) Environment variable of EMACS_LIB set to this directory. Example:
+1.) Environment variable of EMACS_LIB set to this directory. 
+
+Example:
 export EMACS_LIB=/Users/Admin/opt/emacsplugins
 export ERLANG_HOME=/usr/local/lib/erlang
 
 2.) in your .emacs file: (load-file "$EMACS_LIB/boot.el")
+
+3.) for clojure, slime, and clojure-swank
+clojure-mode git://github.com/technomancy/clojure-mode.git
+clojure-extras git://github.com/jochu/clojure-extra.git
+swank-clojure git://github.com/jochu/swank-clojure.git
+slime git://git.boinkor.net/slime.git
 
 
 ###########################################
